@@ -15,7 +15,7 @@ class BstValid:
         self.left_stack.append(node.val)
         self.getNodes(node.right)
 
-    def test(self, root):
+    def isValidBst(self, root):
         self.getNodes(root)
         for i in range(len(self.left_stack) - 1):
             if self.left_stack[i] > self.left_stack[i + 1]:
@@ -31,5 +31,5 @@ if __name__ == "__main__":
     root.right.left = TreeNode(4)
     bstValidator = BstValid()
 
-    isValid = bstValidator.test(root)
+    isValid = bstValidator.isValidBst(root)
     print(isValid)
